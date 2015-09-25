@@ -1,3 +1,3 @@
 # cursoMVC
 
-Curso ASP.NET MVC do básico a 
+Curso ASP.NET MVC.
