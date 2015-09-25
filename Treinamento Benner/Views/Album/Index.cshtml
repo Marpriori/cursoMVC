@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Treinamento_Benner.Models.Album>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="col-xs-12">
+    <h1>Albúm @Html.ActionLink("Novo", "Create",null, new { @class = "btn btn-primary btn-xs" })</h1>
+    <hr />
+    <div class="row" style="max-width:400px">
+     
+        <div class="col-xs-12">
+            <table class="table table-bordered table-striped table-hover table-condensed">
+                <tr>
+                    <th>Artista</th>
+                    <th>Título</th>
+                    <th>Valor</th>
+                    <th>Url</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Artista.Nome</td>
+                        <td>@item.Titulo</td>
+                        <td>@item.Valor</td>
+                        <td><img src="@item.UrlArte" height="50px"/></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

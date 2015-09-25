@@ -1,0 +1,54 @@
+﻿@model Treinamento_Benner.Models.Album
+@using Treinamento_Benner.Helpers
+@{
+    ViewBag.Title = "Novo albúm";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="col-xs-12">
+
+
+        <div class="row" style="max-width:400px">
+            <div class="col-xs-12">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Albúm create @Html.LinkVoltar("Voltar")</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.GeneroId)
+                            @Html.DropDownList("GeneroId", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ArtistaId)
+                            @Html.DropDownList("ArtistaId", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Titulo)
+                            @Html.TextBoxFor(model => model.Titulo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Titulo)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Valor)
+                            @Html.TextBoxFor(model => model.Valor, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UrlArte)
+                            @Html.TextBoxFor(model => model.UrlArte, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.UrlArte)
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Salvar" />
+                            @Html.ActionLink("Cancelar","Index",null, new{ @class = "btn btn-default"})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
