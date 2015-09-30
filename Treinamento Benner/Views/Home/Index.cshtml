@@ -15,5 +15,230 @@
 
 <h2>Linguagens de programação</h2>
 @ListingItems("C", "C++", "C#", "F#")
-<h2>Lista de livros</h2>
-@ListingItems("C for Dummies", "C++ for Dummies", "C# for Dummies", "F# for Dummies")
+<div id="dummiesList">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Lista de livros</h2>
+                        @ListingItems("C for Dummies", "C++ for Dummies", "C# for Dummies", "F# for Dummies")
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <style>
+        p.listrado{
+            background-color:#b6ff00;
+            color:darkblue;
+        }
+    </style>
+    <script>
+        function alternar() {
+            $("#terceiro").toggleClass("listrado");
+        }
+        function count() {
+            alert($('p').size());
+        }
+    </script>
+}
+<p>Um</p>
+<p>II</p>
+<p id="terceiro">Terceiro</p>
+<input type="button" value="Alternar" onclick="alternar()" />
+<input type="button" value="Contar p" onclick="count()" />
+
+
+
+
+<style>
+    .red{
+        float:left;
+        width:100px;
+        height: 100px;
+        background-color:red;
+        margin:10px;
+    }
+    .clear{clear:both;}
+</style>
+<script>
+    $(function () {
+        $("div.red").click(function () {
+            $(this).hide('fast');
+        });
+       
+    });
+    function divShow() {
+        $("div.red:last").show('slow', function() {
+            // Use arguments.callee so we don't need a named function
+            $(this).prev().show("slow", arguments.callee);
+        });
+    }
+</script>
+
+<div class="red"></div>
+<div class="red"></div>
+<div class="red"></div>
+<div class="red"></div>
+<input type="button" value="div show" onclick="divShow()" />
+
+
+<br />
+<hr />
+
+<script>
+    $(function () {
+        $("[language='German'], [language='English']").hide();
+        $("[language='Portuguese']").show();
+        $("a[lang]").click(function () {
+            $("[language]").hide();
+            $("[language=" + $(this).attr("lang") + "]").show();
+        });
+
+    });
+</script>
+<h1 language="Portuguese">Selecionando elementos</h1>
+<h1 language="English">Selecting element</h1>
+<h1 language="German">Ausw El</h1>
+
+<a href="javascript:;" lang="Portuguese">Português</a>
+<a href="javascript:;" lang="English">English</a>
+<a href="javascript:;" lang="German">German</a>
+
+<br />
+<hr />
+
+<div class="row">
+    <div class="col-xs-12">
+
+
+        <style>
+            .tipo {
+                margin: 2px;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('.tipo').each(function () {
+                    if ($(this).is('div')) {
+                        $(this).css({
+                            margin: "5px",
+                            width: "50px",
+                            heigth: "50px",
+                            backgroundColor: "red"
+                        });
+                    }
+                });
+            });
+        </script>
+        <div class="tipo">Nada 1</div>
+        <span class="tipo">Nada 2</span>
+        <div class="tipo">Nada 3</div>
+        <span class="tipo">Nada 4</span>
+        <div class="tipo">Nada 5</div>
+        <span class="tipo">Nada 6</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+
+
+        <script>
+            $(function () {
+                $('#principal').click(function () {
+                    var statusAtual = $(this).is(':checked');
+                    $('input[type="checkbox"]').not($(this)).each(function () {
+                        $(this).prop('checked', statusAtual);
+                    });
+                });
+            });
+        </script>
+        <input type="checkbox" id="principal" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <script>
+            $(function () {
+
+                $('p').each(function (i,e) {
+                    $('#elemento').append(new Option($(this).html(), i));
+                });
+           
+            });
+        
+            function seleciona(indice) {
+                alert($("p").slice(indice, indice+1).html());
+                 console.log($("p")[indice]);
+            }
+        </script>
+        <p>Parágrafo 1</p>
+        <p>Parágrafo 2</p>
+        <p>Parágrafo 3</p>
+        <p>Parágrafo 4</p>
+        <p>Parágrafo 5</p>
+        <select id="elemento"></select>
+        <input type="button" value="Selecionando elemento" onclick="seleciona($('#elemento').val())"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <script>
+            $(function () {
+                $("#alvo").before('<p>Novo elemento antes.</p>');
+                $("#alvo").after('<p>Novo elemento depois.</p>');
+                $("#alvo").prev().remove();
+            });
+        </script>
+        <p id="alvo">Este é o alvo.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <script>
+            //$(function () {
+            //    $('div').click(function (event) {
+            //        alert('Isso é tudo pessoal!');
+            //        $(this).unbind(event);
+            //    });
+            //    $('div').css({
+            //        background: 'red',
+            //        width: '200px',
+            //        height: '200px'
+            //    });
+            //});
+
+            ////Iguais.
+            //$(function () {
+            //    $('div').one('click',function (event) {
+            //        alert('Isso é tudo pessoal!');
+                   
+            //    });
+            //    $('div').css({
+            //        background: 'red',
+            //        width: '200px',
+            //        height: '200px'
+            //    });
+            //});
+        </script>
+    </div>
+</div>

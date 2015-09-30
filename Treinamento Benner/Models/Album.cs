@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Treinamento_Benner.Resources;
+using Treinamento_Benner.ValidationAnnotation;
 
 namespace Treinamento_Benner.Models
 {
@@ -33,12 +34,15 @@ namespace Treinamento_Benner.Models
     public class AlbumMetadata
     {
         [Display(Name = "Gênero")]
+
         public int GeneroId { get; set; }
 
         [StringLength(160, MinimumLength = 3)]
         [Display(ResourceType = typeof(AlbumResource), Name = "Title")]
+        [MaxWord(3)]
         public string Titulo { get; set; }
 
+        
         [Display(ResourceType = typeof(AlbumResource), Name = "Price")]
         public decimal Valor { get; set; }
 

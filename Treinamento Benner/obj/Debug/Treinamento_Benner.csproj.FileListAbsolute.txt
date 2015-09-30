@@ -34,3 +34,4 @@ C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Tre
 C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento Benner\obj\Debug\Treinamento_Benner.csproj.GenerateResource.Cache
 C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento Benner\bin\pt-BR\Treinamento_Benner.resources.dll
 C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento Benner\obj\Debug\pt-BR\Treinamento_Benner.resources.dll
+C:\Users\marcio.lima\Documents\Visual Studio 2013\Projects\Projeto Curso MVC\Treinamento Benner\obj\Debug\Treinamento_Benner.csprojResolveAssemblyReference.cache

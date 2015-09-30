@@ -6,11 +6,25 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+    
+    
+
+    @if (Request.IsAuthenticated)
+    {
+        <hr/>
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="label label-primary">@Treinamento_Benner.Facade.SessionFacade.Usuario.Login</label>
+                @Html.ActionLink("Sair", "Logout", "Account", null, new { @class = "btn btn-warning btn-xs" })
+            </div>
+        </div>
+    }
 </body>
+
 </html>

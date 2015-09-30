@@ -136,11 +136,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\Initializer\LojaInitializer.cs" />
     <Compile Include="Context\LojaContext.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
+    <Compile Include="Facade\SessionFacade.cs" />
     <Compile Include="Filters\LogActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +152,7 @@
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artista.cs" />
     <Compile Include="Models\Genero.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AlbumResource.pt-BR.Designer.cs">
       <DependentUpon>AlbumResource.pt-BR.resx</DependentUpon>
@@ -160,6 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AlbumResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="ValidationAnnotation\MaxWordAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -275,6 +280,9 @@
     <Content Include="Views\Album\Index.cshtml" />
     <Content Include="Views\Album\Create.cshtml" />
     <Content Include="Views\Album\Search.cshtml" />
+    <Content Include="Views\Genero\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Albuns.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

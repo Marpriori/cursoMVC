@@ -8,11 +8,12 @@ using Treinamento_Benner.Models;
 
 namespace Treinamento_Benner.Controllers
 {
+    
     public class AlbumController : BaseController
     {
         private LojaContext _db = new LojaContext();
 
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var albums = from album in _db.Albums
@@ -20,7 +21,7 @@ namespace Treinamento_Benner.Controllers
                          select album;
             return View(albums);
         }
-
+        [Authorize]
         public ActionResult Create()
         {
 
