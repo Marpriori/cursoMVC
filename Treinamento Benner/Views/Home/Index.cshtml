@@ -242,3 +242,96 @@
         </script>
     </div>
 </div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <table id="tabela" class="table">
+            <tr>
+                <th>Biblioteca</th>
+            </tr>
+            <tr>                <td>Jquery</td>            </tr>
+            <tr>                <td>AngularJS</td>            </tr>
+            <tr>                <td>Dojo</td>            </tr>
+        </table>
+        <script>
+            $(function () {
+                $("#tabela tr:even").not(":first").css("background-color", "#ccc");
+                var corAntiga;
+                $("#tabela tr").not(":first").hover(function () {
+                    corAntiga = $(this).css("background-color");
+                        $(this).css("background-color", "yellow").css("cursor", "pointer");
+                }, function () {
+                    $(this).css("background-color", corAntiga).css("cursor", "default");
+                });
+            });
+        </script>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div id="log">
+
+        </div>
+        <script>
+            $(function () {
+                $(document).keyup(function (event) {
+                    
+                    $("#log").append(String.fromCharCode(event.keyCode) + " - ");
+                });
+            });
+        </script>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+
+       
+        <div id="alvoAjax"></div>
+        <input type="button" class="btn btn-primary" value="Carregar" onclick="carregar()" />
+
+        <script>
+            function carregar() {
+                $.ajaxSetup({
+                    cache:false
+                });
+                @*$("#alvoAjax").load("@Url.Action("Index", "Ajax")")*@
+                
+                $.get("@Url.Action("Index", "Ajax")",{ Id: 1, Teste : '2'}, function (result) {
+                    $("#alvo").html(result);
+                });
+            }
+
+        </script>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+
+
+        <script>
+            (function ($) {
+                $.fn.tornarAzul = function () {
+                    return this.css('color', 'blue');
+                }
+                $.diga = function (texto) {
+                    texto = texto || "teste";
+                    alert("Eu disse: " + texto);
+                }
+            })(jQuery);
+
+            $(function () {
+                $("#target").tornarAzul();
+                $.diga("Olá!");
+                $.diga();
+            })
+        </script>
+        <div id="target">Teste</div>
+    </div>
+</div>

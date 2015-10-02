@@ -1,0 +1,4 @@
+C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento_Benner.Tests\bin\Debug\Treinamento_Benner.Tests.dll
+C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento_Benner.Tests\bin\Debug\Treinamento_Benner.Tests.pdb
+C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento_Benner.Tests\obj\Debug\Treinamento_Benner.Tests.dll
+C:\Users\marcio.lima\documents\visual studio 2013\Projects\Projeto Curso MVC\Treinamento_Benner.Tests\obj\Debug\Treinamento_Benner.Tests.pdb

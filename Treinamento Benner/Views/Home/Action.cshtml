@@ -1,7 +1,28 @@
 ﻿@{
     ViewBag.Title = "Action";
+    Layout = null;
 }
 
-<h2>Action</h2>
-<a class="btn btn-primary">Hoje é @ViewBag.Date.DayOfWeek</a>
-<p> Mensagem é @ViewBag.Message</p>
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+
+<style>
+    .sortorder:after{
+        content: '\25b2';
+    }
+    .sortorder.reverse:after{
+        content: '\25bc';
+    }
+</style>
+
+<body ng-app ng-init="aba=1">
+
+  <nav>
+      <a href="javascript:;" ng-click="aba=1">Aba 1</a>
+      <a href="javascript:;" ng-click="aba=2">Aba 2</a>
+      <a href="javascript:;" ng-click="aba=3">Aba 3</a>
+  </nav>
+    <div ng-if="aba==1"><h1>Aba 1</h1></div>
+    <div ng-if="aba==2"><h1>Aba 2</h1></div>
+    <div ng-if="aba==3"><h1>Aba 3</h1></div>
+
+</body>
